@@ -23,7 +23,7 @@ const ProductItem = ({ index, item, onPress }) => {
             setAddedToCart(false);
         }
     }
-    return <TouchableOpacity style={{flex:1}} onPress={onPress}>
+    return <TouchableOpacity style={{ flex: 1 }} onPress={onPress}>
         <View style={styles.productCont}>
             <Image style={styles.productImg} source={{ uri: item.product_img }} />
             <Text style={styles.title}>{item.name}</Text>
@@ -32,12 +32,13 @@ const ProductItem = ({ index, item, onPress }) => {
                     <Text style={styles.subtitle}>{item.weight}</Text>
                     <Text style={styles.subtitle}>{item.price}</Text>
                 </View>
-                <AntDesign
-                    name={addedToCart ? 'checkcircle' : 'pluscircle'}
-                    size={20}
-                    color={addedToCart ? COLORS.accent : '#d3d3d3'}
-                    onPress={handleAddToCar}
-                />
+                <TouchableOpacity onPress={handleAddToCar}>
+                    <AntDesign
+                        name={addedToCart ? 'checkcircle' : 'pluscircle'}
+                        size={20}
+                        color={addedToCart ? COLORS.accent : '#d3d3d3'}
+                    />
+                </TouchableOpacity>
             </View>
         </View>
     </TouchableOpacity>;

@@ -17,7 +17,8 @@ const CustomsubButton = props => {
   );
 };
 
-const CustomeHeaderButton = ({ title, name, onPress }) => {
+const CustomeHeaderButton = ({ title, name, onPress, anotherItem }) => {
+  
   return <HeaderButtons HeaderButtonComponent={CustomsubButton}>
     <Item
       title={title}
@@ -25,6 +26,15 @@ const CustomeHeaderButton = ({ title, name, onPress }) => {
       buttonStyle={{ color: 'black' }}
       onPress={onPress}
     />
+    {
+      anotherItem != undefined ?
+        <Item
+          title={anotherItem.title}
+          iconName={anotherItem.name}
+          buttonStyle={{ color: 'black' }}
+          onPress={anotherItem.onPress}
+        />: null
+    }
   </HeaderButtons>
 };
 

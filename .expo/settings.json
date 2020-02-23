@@ -2,7 +2,7 @@
   "urlRandomness": "ip-7tw",
   "hostType": "lan",
   "lanType": "ip",
-  "dev": true,
-  "minify": false,
+  "dev": false,
+  "minify": true,
   "https": false
 }

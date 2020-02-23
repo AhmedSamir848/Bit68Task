@@ -1,6 +1,6 @@
 //Import libraies
 import React from 'react';
-import { StyleSheet, Text, View, Platform } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 //Create Component
 const Header = ({ parentNavigation }) => {
@@ -17,16 +17,19 @@ const Header = ({ parentNavigation }) => {
         <Text style={styles.titleStyle}>{name}</Text>
       </View>
       <View style={{ flexDirection: 'row' }}>
-        <MaterialIcons
-          name="search"
-          style={styles.rightIcon}
-          onPress={() => parentNavigation.navigate('Search')}
-        />
-        <MaterialIcons
-          name="shopping-cart"
-          style={styles.rightIcon}
-          onPress={() => parentNavigation.navigate('Cart')}
-        />
+        <TouchableOpacity onPress={() => parentNavigation.navigate('Search')}>
+          <MaterialIcons
+            name="search"
+            style={styles.rightIcon}
+          />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => parentNavigation.navigate('Cart')}>
+          <MaterialIcons
+            name="shopping-cart"
+            style={styles.rightIcon}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );

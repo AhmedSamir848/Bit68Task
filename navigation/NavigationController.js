@@ -39,13 +39,15 @@ const homeNavigator = createStackNavigator({
                     name={Platform.OS === 'android' ? 'md-search' : 'ios-search'}
                     onPress={() => {
                         navigation.navigate('Search');
-                    }} />
-                    <CustomeHeaderButton
-                        title="Cart"
-                        name={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'}
-                        onPress={() => {
+                    }}
+                    anotherItem={{
+                        title: "Cart",
+                        name: Platform.OS === 'android' ? 'md-cart' : 'ios-cart',
+                        onPress: () => {
                             navigation.navigate('Cart');
-                        }} />
+                        }
+                    }}
+                />
                 </View>
             }
         },
@@ -53,7 +55,7 @@ const homeNavigator = createStackNavigator({
     Products: {
         screen: Products,
         navigationOptions: {
-            headerShown:false
+            headerShown: false
         }
     },
     ProductDetails,
