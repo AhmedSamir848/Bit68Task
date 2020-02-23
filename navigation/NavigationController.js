@@ -100,8 +100,8 @@ const MenueNavigator = createDrawerNavigator({
 });
 
 const RootNavigator = createSwitchNavigator({
-    main: MenueNavigator,
     startup: Intro,
+    main: MenueNavigator,
 });
 
 export default createAppContainer(RootNavigator);

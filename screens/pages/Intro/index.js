@@ -1,9 +1,12 @@
 /* Libraries That Needed */
-import React, { useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Image, AsyncStorage } from 'react-native';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { setCart } from '../../../store/actions/cart';
+import { fetchCategories } from '../../../store/actions/categories';
+import { useDispatch } from 'react-redux';
 
 /************************/
 const slides = [
@@ -62,6 +65,17 @@ const Intro = ({navigation}) => {
             </View>
         );
     };
+
+    const dispatch = useDispatch();
+
+    // Fetch categories After Loading Component
+    useEffect(() => {
+        dispatch(fetchCategories());
+        AsyncStorage.getItem('userCart', (err, cart) => {
+            const savedCart = JSON.parse(cart);
+            dispatch(setCart(savedCart));
+        });
+    }, [dispatch]);
 
     // View 
     return (
