@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Bit68Task",
+    "slug": "Bit68Task",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ee836e"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bit64.task",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.bit64.task",
+      "versionCode": 5
+    },
+    "description": "This is the debug version for the task i used expo to facilitate the process of testing the app and avoid the hassle of the different environments configuration . \n\n/* the steps to test the app */\n1- Download Expo App from The Store \n2- scan the QR Code "
+  }
+}
